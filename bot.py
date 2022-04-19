@@ -12,9 +12,6 @@ class MyBot(commands.Bot):
         intents.members = True
         super().__init__(command_prefix="!", intents=intents)
 
-   # async def on_ready(self):
-   #a     self.log.infolog(f"{self.user} has connected to Discord!")
-
     # Créer un événement
     async def on_ready(self):
         print("Le bot est prêt !")
@@ -24,6 +21,10 @@ class MyBot(commands.Bot):
             await message.channel.send("BLOODHOUND!!!")
         elif message.content == "Meilleure map d'Apex?":
             await message.channel.send("Certainement pas Kings Canyon mdr")
+        elif message.content == "!server":
+            await message.channel.send("Ce server à été crée par Polarisé pendant le confinement afin de chill/travailler/jouer entre potes.")
+        elif message.content == "!help":
+            await message.channel.send("Meilleure Légende d'Apex? | Meilleure map d'Apex? | !help | !server")
     
     async def on_member_join(self, member):
             guild = member.guild
