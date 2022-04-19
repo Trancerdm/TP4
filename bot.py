@@ -1,6 +1,8 @@
 from discord import Client
 import discord
 from discord.ext import commands
+from dotenv import load_dotenv
+import os
 
 class MyBot(commands.Bot):
     def __init__(self):
@@ -30,5 +32,6 @@ class MyBot(commands.Bot):
                 to_send = 'bienvenue {0.mention} sur le serveur {1.name}'.format(member, guild)
                 await guild.system_channel.send(to_send)
 
+load_dotenv(dotenv_path="config.txt")
 bot = MyBot()
-bot.run("OTU4NjkyMzEwOTM2MzUwNzQw.YkRByg.m44oU5XxJ3HG8pxjFSm2T5-iotE")
+bot.run(os.getenv("TOKEN"))
