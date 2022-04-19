@@ -1,10 +1,14 @@
 from discord import Client
 import discord
+from discord.ext import commands
 
-class MyBot(Client):
+class MyBot(commands.Bot):
     def __init__(self):
-        super().__init__()
-        self.run("OTU4NjkyMzEwOTM2MzUwNzQw.YkRByg.VHACXURL6RbI5gkU4PtLb6fOyjw")
+
+        intents = discord.Intents.default()
+        intents.presences = True
+        intents.members = True
+        super().__init__(command_prefix="!", intents=intents)
 
    # async def on_ready(self):
    #a     self.log.infolog(f"{self.user} has connected to Discord!")
@@ -14,14 +18,17 @@ class MyBot(Client):
         print("Le bot est prêt !")
 
     async def on_message(ctx, message):
-        if message.content == "Best Apex legend?":
+        if message.content == "Meilleure Légende d'Apex?":
             await message.channel.send("BLOODHOUND!!!")
-
-    async def on_member_join(member):
-        print(f"L'utilisateur {member.display_name} a rejoint le serveur !")
+        elif message.content == "Meilleure map d'Apex?":
+            await message.channel.send("Certainement pas Kings Canyon mdr")
+    
+    async def on_member_join(self, member):
+            guild = member.guild
+            print("Quelqu'un a rejoint")
+            if guild.system_channel is not None:
+                to_send = 'bienvenue {0.mention} sur le serveur {1.name}'.format(member, guild)
+                await guild.system_channel.send(to_send)
 
 bot = MyBot()
-
-default_intents = discord.Intents.default()
-default_intents.members = True
-client = discord.Client(intents=default_intents)
+bot.run("OTU4NjkyMzEwOTM2MzUwNzQw.YkRByg.m44oU5XxJ3HG8pxjFSm2T5-iotE")
