@@ -1,0 +1,9 @@
+INFO: 04/23/2022 10:04:15 PM Ceci est un message test d'info
+WARNING: 04/23/2022 10:04:15 PM Ceci est un message test de warning
+ERROR: 04/23/2022 10:04:15 PM Ceci est un message test d'erreur
+INFO: 04/23/2022 10:04:15 PM -------- Started ---------
+WARNING: 04/23/2022 10:04:15 PM PyNaCl is not installed, voice will NOT be supported
+INFO: 04/23/2022 10:04:15 PM logging in using static token
+INFO: 04/23/2022 10:04:16 PM Shard ID None has sent the IDENTIFY payload.
+INFO: 04/23/2022 10:04:16 PM Shard ID None has connected to Gateway: ["gateway-prd-main-q221",{"micros":59669,"calls":["discord-sessions-blue-prd-2-121",{"micros":57958,"calls":["start_session",{"micros":45714,"calls":["discord-api-59dffdb7f6-t5fs8",{"micros":40669,"calls":["get_user",{"micros":8611},"add_authorized_ip",{"micros":1868},"get_guilds",{"micros":6399},"coros_wait",{"micros":2}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":10542,"calls":[]}]}]}] (Session ID: e4e600dba57c763979dec8d104c3adaa).
+2022-04-23 22:04:18.240590 The bot bot_tp4 is logged to the server !
