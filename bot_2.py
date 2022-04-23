@@ -57,7 +57,7 @@ class MyBot(commands.Bot):
             config = json.load(f)
         return config
 
-    def main(config : dict) -> bool:
+    def main(config: dict) -> bool:
         token = config["token"]
         bot = MyBot()
         bot.run(token)
