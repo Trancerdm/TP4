@@ -53,41 +53,24 @@ class MyBot(commands.Bot):
         return parser.parse_args()
 
     def get_config(config_file: str)-> dict:
-
         with open(config_file, "r") as f:
-
             config = json.load(f)
-
         return config
 
-
-
     def main(config : dict) -> bool:
-
         token = config["token"]
-
-        log = Logger(config["log_config"])
-
-        mybot = bot.MyBot(log)
-
-        mybot.run(token)
-
+        bot = MyBot()
+        bot.run(token)
         pass
 
-
-
     if __name__ == "__main__":
-
         args = parse_args()
-
         config = get_config(args.config)
-
         main(config)
-
         pass
 
 
 # load_dotenv(dotenv_path="config.txt")
-bot = MyBot()
+# bot = MyBot()
 # bot.run(os.getenv("TOKEN"))
 
